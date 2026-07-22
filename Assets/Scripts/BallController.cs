@@ -22,16 +22,6 @@ public class BallController : MonoBehaviour
         var playerMap = inputActions.FindActionMap("Player", true);
         _moveaction = playerMap.FindAction("Move", true);
     }
-
-    private void OnEnable()
-    {
-        _moveaction.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _moveaction.Disable();
-    }
     
     void Start()
     {

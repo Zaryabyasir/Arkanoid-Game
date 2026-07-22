@@ -35,13 +35,12 @@ public class PaddleController : MonoBehaviour
     {
         /* Keep this disabled. Calling Disable() here
            freezes the paddle when a Multi-Ball clone is destroyed. */
-        // _moveActions.Disable();
+         _moveActions.Disable();
     }
 
     void Update()
     {
-        _moveInput = _moveActions.ReadValue<Vector2>();
-        
+        _moveInput = _moveActions.ReadValue<Vector2>();   
     }
 
     private void FixedUpdate()
@@ -53,7 +52,7 @@ public class PaddleController : MonoBehaviour
     {
         StartCoroutine(ExpandRoutine());
     }
-        private System.Collections.IEnumerator ExpandRoutine()
+        private IEnumerator ExpandRoutine()
         {
             transform.localScale = new Vector3(originalX * 1.5f, transform.localScale.y, transform.localScale.z);
             yield return new WaitForSeconds(5f);

@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(gameOverSound, transform.position);
             gameOverUI.SetActive(true);
+            Time.timeScale = 0;
         }
         else
         {
@@ -136,6 +137,5 @@ public class GameManager : MonoBehaviour
                 
         }
     }
-    
 }
 
